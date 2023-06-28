@@ -10,7 +10,4 @@ jobs:
 workflows:
   build-and-deploy:
     jobs:
-      - hello-world:
-          filters:
-            branches:
-              only: main
+      - hello-world
