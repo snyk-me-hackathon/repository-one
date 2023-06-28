@@ -1,11 +1,15 @@
 version: 2.1
 
+orbs:
+  snyk: snyk/snyk@1.7.0
+
 jobs:
   hello-world:
     docker:
       - image: cimg/node:20.3.1
     steps:
       - run: echo "Hello, World!"
+      - snyk/scan
 
 workflows:
   build-and-deploy:
