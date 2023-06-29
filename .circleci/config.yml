@@ -1,13 +1,13 @@
 version: 2.1
 
 jobs:
-  hello-world:
+  install:
     docker:
       - image: cimg/node:20.3.1
     steps:
-      - run: echo "Hello, World!"
+      - run: npm ci
 
 workflows:
   build-and-deploy:
     jobs:
-      - hello-world
+      - install
